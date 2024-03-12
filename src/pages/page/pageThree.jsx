@@ -8,13 +8,13 @@ import { RiNumber3 } from "react-icons/ri";
 import { RiNumber2 } from "react-icons/ri";
 import { NavLink, useNavigate } from "react-router-dom";
 
-function home() {
-  const navigate = useNavigate();
+function pageThree() {
+  const navigate = useNavigate()
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const [active, setActive] = useState(0);
   useEffect(() => {
-    fetch("https://strapi-store-server.onrender.com/api/products", {
+    fetch("https://strapi-store-server.onrender.com/api/products?page=3", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -97,9 +97,9 @@ function home() {
     }
   };
   localStorage.setItem("count", JSON.stringify(counter))
-  const [pageOne, setPageOne] = useState(true)
+  const [pageOne, setPageOne] = useState(false)
   const [pageTwo, setPageTwo] = useState(false)
-  const [pageThree, setPageThree] = useState(false)
+  const [pageThree, setPageThree] = useState(true)
 
   function pageOneHandle() {
     setPageOne(true)
@@ -281,4 +281,4 @@ function home() {
   );
 }
 
-export default home;
+export default pageThree;

@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(to left, rgb(12, 5, 111), rgb(12, 108, 121));
+  background: linear-gradient(to left, rgb(9, 11, 144), rgb(77, 3, 114));
 }
 .active {
   transition: all 0.5s ease-in-out;
@@ -21,6 +21,9 @@ a {
   width: 20px;
   height: 20px;
   font-size: 24px;
+}
+.active-page {
+  background: yellow;
 }
 .container {
   z-index: 1;
@@ -69,6 +72,7 @@ a {
 }
 .categories-card {
   width: 350px;
+  height: 282px;
   border-radius: 10px;
   padding: 5px;
   transition: all 0.4s ease-in-out;
@@ -113,8 +117,11 @@ a {
   overflow: scroll;
   scrollbar-width: none;
 }
+.categories {
+  position: relative;
+}
 .single {
-  transition: all 0.5.s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: absolute;
   width: 1200px;
   margin: 0 auto;
@@ -243,8 +250,11 @@ a {
   transition: all 0.4s ease-in-out;
   position: absolute;
   color: #020c49;
-  top: 13px;
-  left: 52.5%;
+  top: -93px;
+  left: 53%;
+}
+.basket {
+  position: relative;
 }
 .basket h1 {
   transition: all 0.4s ease-in-out;
@@ -334,4 +344,14 @@ a {
   margin-top: 190px;
   margin-bottom: 188px;
   margin-left: 540px;
+}
+
+.page {
+  position: absolute;
+  background: white;
+  top: -80px;
+  right: -10px;
+  border-radius: 20px;
+  padding: 3px 5px 0px;
+  display: flex;
 }

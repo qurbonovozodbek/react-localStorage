@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function savat() {
   const [data, setData] = useState([]);
+  const [counter, setCounter] = useState(localStorage.getItem('count'));
 
   useEffect(() => {
 
@@ -16,23 +17,15 @@ function savat() {
     }
   
     const storedData = getData();
+    console.log(storedData);
     setData(storedData);
-
-    // function getData() {
-    //   let products = [];
-    //   if (localStorage.getItem("products")) {
-    //     products = JSON.parse(localStorage.getItem("products"));
-    //   }
-    //   return products;
-    // }
-
-    // const box = localStorage.getItem("products");
-    // setData(JSON.parse(box));
   }, []);
+  
 
   return (
     <>
       <div className="basket">
+      <div className="count">{counter}</div>
         <h1>Savat</h1>
         <div className="basket-info-cards">
           {data.map((a, index) => (
@@ -56,6 +49,7 @@ function savat() {
                     const updatedData = data.filter((x) => x.card.id !== a.card.id);
                     setData(updatedData);
                     localStorage.setItem("products", JSON.stringify(updatedData));
+                    setCounter(counter - 1);
                   }}
                 >
                   Delete
